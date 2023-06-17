@@ -11,6 +11,7 @@
 		23BF0CD72A3E2CE100816002 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23BF0CD62A3E2CE100816002 /* ContentView.swift */; };
 		23BF0CD92A3E2CE200816002 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 23BF0CD82A3E2CE200816002 /* Assets.xcassets */; };
 		23BF0CDC2A3E2CE200816002 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 23BF0CDB2A3E2CE200816002 /* Preview Assets.xcassets */; };
+		CDE5CBD12A3E39560075E98D /* Fadigue sensor.mlproj in Resources */ = {isa = PBXBuildFile; fileRef = CDE5CBD02A3E39560075E98D /* Fadigue sensor.mlproj */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +21,7 @@
 		23BF0CD82A3E2CE200816002 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		23BF0CDB2A3E2CE200816002 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		23BF0CDD2A3E2CE200816002 /* drowsinessDetector.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = drowsinessDetector.entitlements; sourceTree = "<group>"; };
+		CDE5CBD02A3E39560075E98D /* Fadigue sensor.mlproj */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = "Fadigue sensor.mlproj"; path = "../../../Fadigue sensor.mlproj"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +54,7 @@
 		23BF0CD32A3E2CE100816002 /* drowsinessDetector */ = {
 			isa = PBXGroup;
 			children = (
+				CDE5CBCD2A3E392C0075E98D /* CoreML */,
 				23BF0CD42A3E2CE100816002 /* drowsinessDetectorApp.swift */,
 				23BF0CD62A3E2CE100816002 /* ContentView.swift */,
 				23BF0CD82A3E2CE200816002 /* Assets.xcassets */,
@@ -67,6 +70,14 @@
 				23BF0CDB2A3E2CE200816002 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		CDE5CBCD2A3E392C0075E98D /* CoreML */ = {
+			isa = PBXGroup;
+			children = (
+				CDE5CBD02A3E39560075E98D /* Fadigue sensor.mlproj */,
+			);
+			path = CoreML;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -128,6 +139,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				23BF0CDC2A3E2CE200816002 /* Preview Assets.xcassets in Resources */,
+				CDE5CBD12A3E39560075E98D /* Fadigue sensor.mlproj in Resources */,
 				23BF0CD92A3E2CE200816002 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
