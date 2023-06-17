@@ -11,7 +11,7 @@
 		23BF0CD72A3E2CE100816002 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23BF0CD62A3E2CE100816002 /* ContentView.swift */; };
 		23BF0CD92A3E2CE200816002 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 23BF0CD82A3E2CE200816002 /* Assets.xcassets */; };
 		23BF0CDC2A3E2CE200816002 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 23BF0CDB2A3E2CE200816002 /* Preview Assets.xcassets */; };
-		23BF0CE42A3E3B2E00816002 /* Fadigue sensor.mlproj in Resources */ = {isa = PBXBuildFile; fileRef = 23BF0CE32A3E3B2E00816002 /* Fadigue sensor.mlproj */; };
+		CD5FE7152A3E3D40004363AC /* CoreML.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = CD5FE7142A3E3D40004363AC /* CoreML.mlmodel */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,7 +21,7 @@
 		23BF0CD82A3E2CE200816002 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		23BF0CDB2A3E2CE200816002 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		23BF0CDD2A3E2CE200816002 /* drowsinessDetector.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = drowsinessDetector.entitlements; sourceTree = "<group>"; };
-		23BF0CE32A3E3B2E00816002 /* Fadigue sensor.mlproj */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = "Fadigue sensor.mlproj"; sourceTree = "<group>"; };
+		CD5FE7142A3E3D40004363AC /* CoreML.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = CoreML.mlmodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,7 +75,7 @@
 		CDE5CBCD2A3E392C0075E98D /* CoreML */ = {
 			isa = PBXGroup;
 			children = (
-				23BF0CE32A3E3B2E00816002 /* Fadigue sensor.mlproj */,
+				CD5FE7142A3E3D40004363AC /* CoreML.mlmodel */,
 			);
 			path = CoreML;
 			sourceTree = "<group>";
@@ -139,7 +139,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				23BF0CDC2A3E2CE200816002 /* Preview Assets.xcassets in Resources */,
-				23BF0CE42A3E3B2E00816002 /* Fadigue sensor.mlproj in Resources */,
 				23BF0CD92A3E2CE200816002 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -153,6 +152,7 @@
 			files = (
 				23BF0CD72A3E2CE100816002 /* ContentView.swift in Sources */,
 				23BF0CD52A3E2CE100816002 /* drowsinessDetectorApp.swift in Sources */,
+				CD5FE7152A3E3D40004363AC /* CoreML.mlmodel in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
