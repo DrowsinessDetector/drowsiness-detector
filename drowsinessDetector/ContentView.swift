@@ -95,6 +95,14 @@ struct ContentView: View {
             
             CameraView(vm: vm)
                 .frame(width: 0, height: 0)
+                .onChange(of: vm.capturedImage) {
+                    guard let image = $0 else { return }
+                    let detector = try? DrowsinessDetector()
+                    
+                    if let prediction = detector?.predict(image) {
+                        print("Is drowsy ? \(prediction)")
+                    }
+                }
             
             if let image = vm.capturedImage {
                 Image(nsImage: image)
