@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		23ABA6D52A43D9C800F52E5E /* acorda.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 23ABA6D42A43D9C800F52E5E /* acorda.mp3 */; };
+		23ABA6D82A43E2DB00F52E5E /* CaptureViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23ABA6D72A43E2DB00F52E5E /* CaptureViewModel.swift */; };
 		23BF0CD52A3E2CE100816002 /* drowsinessDetectorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23BF0CD42A3E2CE100816002 /* drowsinessDetectorApp.swift */; };
 		23BF0CD72A3E2CE100816002 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23BF0CD62A3E2CE100816002 /* ContentView.swift */; };
 		23BF0CD92A3E2CE200816002 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 23BF0CD82A3E2CE200816002 /* Assets.xcassets */; };
@@ -16,6 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		23ABA6D42A43D9C800F52E5E /* acorda.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = acorda.mp3; sourceTree = "<group>"; };
+		23ABA6D72A43E2DB00F52E5E /* CaptureViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptureViewModel.swift; sourceTree = "<group>"; };
 		23BF0CD12A3E2CE100816002 /* drowsinessDetector.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = drowsinessDetector.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		23BF0CD42A3E2CE100816002 /* drowsinessDetectorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = drowsinessDetectorApp.swift; sourceTree = "<group>"; };
 		23BF0CD62A3E2CE100816002 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -37,6 +41,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		23ABA6D32A43D9B600F52E5E /* Audio */ = {
+			isa = PBXGroup;
+			children = (
+				23ABA6D42A43D9C800F52E5E /* acorda.mp3 */,
+			);
+			path = Audio;
+			sourceTree = "<group>";
+		};
+		23ABA6D62A43E2C500F52E5E /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				23ABA6D72A43E2DB00F52E5E /* CaptureViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		23BF0CC82A3E2CE100816002 = {
 			isa = PBXGroup;
 			children = (
@@ -56,6 +76,8 @@
 		23BF0CD32A3E2CE100816002 /* drowsinessDetector */ = {
 			isa = PBXGroup;
 			children = (
+				23ABA6D62A43E2C500F52E5E /* ViewModel */,
+				23ABA6D32A43D9B600F52E5E /* Audio */,
 				CDE5CBCD2A3E392C0075E98D /* CoreML */,
 				23BF0CD42A3E2CE100816002 /* drowsinessDetectorApp.swift */,
 				23BF0CD62A3E2CE100816002 /* ContentView.swift */,
@@ -141,6 +163,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				23ABA6D52A43D9C800F52E5E /* acorda.mp3 in Resources */,
 				23BF0CDC2A3E2CE200816002 /* Preview Assets.xcassets in Resources */,
 				23BF0CD92A3E2CE200816002 /* Assets.xcassets in Resources */,
 			);
@@ -154,6 +177,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				23BF0CD72A3E2CE100816002 /* ContentView.swift in Sources */,
+				23ABA6D82A43E2DB00F52E5E /* CaptureViewModel.swift in Sources */,
 				23BF0CD52A3E2CE100816002 /* drowsinessDetectorApp.swift in Sources */,
 				F28E9D8C2A41F3F4009CDC71 /* DrowsinessDetector.swift in Sources */,
 				CD5FE7152A3E3D40004363AC /* CoreML.mlmodel in Sources */,
