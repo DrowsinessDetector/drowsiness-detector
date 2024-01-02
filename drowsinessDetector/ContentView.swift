@@ -1,45 +1,7 @@
 import SwiftUI
 import AVFoundation
 
-class CaptureViewModel: ObservableObject {
-    @Published var capturedImage: NSImage?
-    @Published var count = 0
-    
-}
 
-struct CameraView: NSViewRepresentable {
-    @ObservedObject var vm: CaptureViewModel
-    
-    func makeCoordinator() -> Coordinator {
-        Coordinator(viewModel: _vm)
-    }
-    
-    func makeNSView(context: Context) -> CameraPreviewView {
-        let captureView = CameraPreviewView()
-        captureView.coordinator = context.coordinator
-        captureView.setupCaptureSession()
-        return captureView
-    }
-    
-    func updateNSView(_ nsView: CameraPreviewView, context: Context) {
-    }
-    
-    class Coordinator: NSObject, AVCapturePhotoCaptureDelegate {
-        @ObservedObject var viewModel: CaptureViewModel
-        
-        init(viewModel: ObservedObject<CaptureViewModel>) {
-            _viewModel = viewModel
-        }
-        
-        func photoOutput(_ output: AVCapturePhotoOutput, didFinishProcessingPhoto photo: AVCapturePhoto, error: Error?) {
-            if let imageData = photo.fileDataRepresentation(),
-               let image = NSImage(data: imageData) {
-                viewModel.capturedImage = image
-            }
-        }
-        
-    }
-}
 
 class CameraPreviewView: NSView {
     private var captureSession: AVCaptureSession?
@@ -86,21 +48,23 @@ class CameraPreviewView: NSView {
 
 struct ContentView: View {
     @StateObject private var vm = CaptureViewModel()
-    
+    @State private var accuracy = 0.0
+    @State private var isDrowsy = false
     var body: some View {
         VStack {
-            Text("Camera Capture")
-                .font(.title)
-                .padding()
-            
             CameraView(vm: vm)
                 .frame(width: 0, height: 0)
                 .onChange(of: vm.capturedImage) {
                     guard let image = $0 else { return }
                     let detector = try? DrowsinessDetector()
                     
-                    if let prediction = detector?.predict(image) {
-                        print("Is drowsy ? \(prediction)")
+                    if let (prediction, accuracy) = detector?.predict(image) {
+                        print("Is drowsy ? \(String(describing: prediction)) \(accuracy)")
+                        self.accuracy = accuracy
+                        isDrowsy = (prediction ?? false)
+                        if isDrowsy {
+                            NSSound(named: "acorda")?.play()
+                        }
                     }
                 }
             
@@ -109,9 +73,21 @@ struct ContentView: View {
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .overlay(alignment: .topTrailing) {
-                        Text("\(vm.count)")
-                            .font(.system(size: 40))
+                        Text("Quantidade de imagens capturadas: \(vm.count)")
+                            .font(.system(size: 20))
                             .foregroundColor(.red)
+                    }
+                    .overlay(alignment: .bottomTrailing) {
+                        HStack {
+                            Text((isDrowsy ? "Cansado" : "Ativo"))
+                                .font(.system(size: 40))
+                                .foregroundColor(isDrowsy ? .red : .green)
+                            if (accuracy > 0.60) && isDrowsy {
+                                Text(String(format: "%.2f%%", accuracy * 100))
+                                    .font(.system(size: 40))
+                                    .foregroundColor(isDrowsy ? .red : .green)
+                            }
+                        }
                     }
             } else {
                 Text("No Image Captured")

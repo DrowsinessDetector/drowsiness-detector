@@ -14,12 +14,12 @@ struct DrowsinessDetector {
         self.model = try CoreML(configuration: .init())
     }
     
-    public func predict(_ image: NSImage) -> Bool? {
+    public func predict(_ image: NSImage) -> (Bool?, Double) {
         guard let imageData = self.preprocessData(from: image),
               let prediction = try? self.model.prediction(image: imageData)
-        else { return nil }
-        
-        return prediction.classLabel.contains("Fatigue")
+        else { return (nil, 0.0) }
+        let accuracy: Double = prediction.classLabelProbs["Fatigue Subjects"] ?? 0
+        return (prediction.classLabel.contains("Fatigue"), accuracy)
     }
     
     private func preprocessData(from image: NSImage) -> CVPixelBuffer? {
